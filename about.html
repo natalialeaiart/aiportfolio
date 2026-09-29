@@ -31,18 +31,23 @@
       padding-right: var(--pad-x);
     }
 
+    /* 9:16 frame matches the looped video exactly — nothing is stretched or cropped */
     .about-portrait {
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 9 / 16;
       overflow: hidden;
       border-radius: 4px;
       background: var(--bg-raised);
-      /* When you have a custom photo, replace Pic.jpg with it */
     }
-    .about-portrait img {
+    .about-portrait video {
       width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
+    }
+
+    /* Global reduced-motion rule hides autoplay videos; here the poster must stay visible */
+    @media (prefers-reduced-motion: reduce) {
+      .about-portrait video { display: block; }
     }
 
     .about-intro-tag { display: block; margin-bottom: 1.5rem; }
@@ -284,7 +289,7 @@
     /* ── Responsive ───────────────────────────────────── */
     @media (max-width: 900px) {
       .about-hero { grid-template-columns: 1fr; }
-      .about-portrait { max-width: 320px; }
+      .about-portrait { max-width: 260px; }
       .side-grid { grid-template-columns: 1fr; }
       .sites-grid { grid-template-columns: 1fr; }
     }
@@ -292,6 +297,7 @@
       .services-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
+      .about-portrait { max-width: 220px; }
       .timeline-wrap { padding-left: 7rem; }
       .timeline-wrap::before { left: 5.5rem; }
       .tl-date { left: -7rem; width: 5.5rem; font-size: 0.58rem; }
@@ -315,11 +321,12 @@
 <!-- ═══ About Hero ═══════════════════════════════════════════ -->
 <section class="about-hero" aria-label="Introduction">
   <div class="about-portrait reveal">
-    <!--
-      Photo: copy Pic.jpg from your old repo into this repo.
-      For best results, use a portrait-orientation crop (4:5 ratio).
-    -->
-    <img src="Pic.jpg" alt="Natalia Le" loading="eager">
+    <!-- Seamless 9:16 loop. Poster = first frame, shown instantly while the video loads.
+         muted + playsinline are required for autoplay on iPhone. -->
+    <video id="about-loop" autoplay muted loop playsinline preload="metadata"
+           poster="about-poster.jpg" aria-label="Natalia Le">
+      <source src="about.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="reveal" style="--d:.1s">
     <span class="section-tag about-intro-tag">About</span>
@@ -392,49 +399,6 @@
 </div>
 
 <hr class="rule">
-
-<!-- ═══ What I Do ═══════════════════════════════════════════ -->
-<div class="section section-sm">
-  <span class="section-tag reveal">What I do</span>
-
-  <div class="services-grid">
-
-    <div class="svc-card reveal">
-      <span class="svc-number">AI Video Production</span>
-      <h3 class="svc-title">Script to final cut,<br>fully AI-generated</h3>
-      <p class="svc-desc">Concept development, storyboard, character design,
-      animation, and editing — for social media, e-commerce, and brand promotion.</p>
-      <span class="svc-tools">Kling · Veo · Seedance · Filmora · CapCut</span>
-    </div>
-
-    <div class="svc-card reveal" style="--d:.08s">
-      <span class="svc-number">Image &amp; Characters</span>
-      <h3 class="svc-title">Prompt engineering<br>and character consistency</h3>
-      <p class="svc-desc">Image generation, character consistency
-      across scenes, compositing and retouching.</p>
-      <span class="svc-tools">NanoBanana · Seedream · GPT-Image · MidJourney · PicsArt · Lightroom</span>
-    </div>
-
-    <div class="svc-card reveal" style="--d:.05s">
-      <span class="svc-number">AI Music &amp; Audio</span>
-      <h3 class="svc-title">Custom music, voice,<br>and ambient sound</h3>
-      <p class="svc-desc">Music and audio for ads, AI voice acting, ambient soundscapes.
-      Original songs written to commissioned and own poetry, available on streaming platforms
-      as NataliaLe Music.</p>
-      <span class="svc-tools">Suno · MMAudio · Eleven Labs</span>
-    </div>
-
-    <div class="svc-card reveal" style="--d:.13s">
-      <span class="svc-number">Websites &amp; Automation</span>
-      <h3 class="svc-title">Websites, AI workflows<br>and Telegram bots</h3>
-      <p class="svc-desc">Landing pages, blogs with their own CMS, and portfolio sites — plus
-      AI-powered Telegram bots for news delivery and content generation.
-      Built with AI-assisted development, from brief to live domain.</p>
-      <span class="svc-tools">Claude Code · Cloudflare · Vercel · GitHub · Python · n8n</span>
-    </div>
-
-  </div>
-</div>
 
 <!-- ═══ Websites ═════════════════════════════════════════════ -->
 <div class="section section-sm" id="websites">
@@ -547,6 +511,51 @@
 
 <hr class="rule">
 
+<!-- ═══ What I Do ═══════════════════════════════════════════ -->
+<div class="section section-sm">
+  <span class="section-tag reveal">Work with me</span>
+
+  <div class="services-grid">
+
+    <div class="svc-card reveal">
+      <span class="svc-number">AI Video Production</span>
+      <h3 class="svc-title">Script to final cut,<br>fully AI-generated</h3>
+      <p class="svc-desc">Concept development, storyboard, character design,
+      animation, and editing — for social media, e-commerce, and brand promotion.</p>
+      <span class="svc-tools">Kling · Veo · Seedance · Filmora · CapCut</span>
+    </div>
+
+    <div class="svc-card reveal" style="--d:.08s">
+      <span class="svc-number">Image &amp; Characters</span>
+      <h3 class="svc-title">Prompt engineering<br>and character consistency</h3>
+      <p class="svc-desc">Image generation, character consistency
+      across scenes, compositing and retouching.</p>
+      <span class="svc-tools">NanoBanana · Seedream · GPT-Image · MidJourney · PicsArt · Lightroom</span>
+    </div>
+
+    <div class="svc-card reveal" style="--d:.05s">
+      <span class="svc-number">AI Music &amp; Audio</span>
+      <h3 class="svc-title">Custom music, voice,<br>and ambient sound</h3>
+      <p class="svc-desc">Music and audio for ads, AI voice acting, ambient soundscapes.
+      Original songs written to commissioned and own poetry, available on streaming platforms
+      as NataliaLe Music.</p>
+      <span class="svc-tools">Suno · MMAudio · Eleven Labs</span>
+    </div>
+
+    <div class="svc-card reveal" style="--d:.13s">
+      <span class="svc-number">Websites &amp; Automation</span>
+      <h3 class="svc-title">Websites, AI workflows<br>and Telegram bots</h3>
+      <p class="svc-desc">Landing pages, blogs with their own CMS, and portfolio sites — plus
+      AI-powered Telegram bots for news delivery and content generation.
+      Built with AI-assisted development, from brief to live domain.</p>
+      <span class="svc-tools">Claude Code · Cloudflare · Vercel · GitHub · Python · n8n</span>
+    </div>
+
+  </div>
+</div>
+
+<hr class="rule">
+
 <!-- ═══ Footer ═══════════════════════════════════════════════ -->
 <footer class="footer" id="contact">
   <div class="footer-top">
@@ -586,6 +595,16 @@
     });
   }, { threshold: 0.06 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // About loop: play only while on screen — saves battery and data
+  const loop = document.getElementById('about-loop');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    loop.removeAttribute('autoplay');
+    loop.pause();   // poster stays as a still photo
+  } else new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) loop.play().catch(() => {});
+    else loop.pause();
+  }, { threshold: 0.25 }).observe(loop);
 </script>
 </body>
 </html>
