@@ -238,11 +238,55 @@
     .side-links a:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
     .side-links a:hover::after { color: var(--bg); transform: translate(2px, -2px); }
 
+    /* ── Websites ─────────────────────────────────────── */
+    .sites-lead {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: var(--text);
+      max-width: 60ch;
+      margin: -0.75rem 0 2rem;
+    }
+    .sites-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--divider);
+    }
+    .site-card { background: var(--bg-raised); display: flex; flex-direction: column; }
+    /* Minimal "address bar": three dots + domain, in place of a screenshot */
+    .site-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.8rem 1.75rem;
+      background: rgba(18, 16, 20, 0.45);
+      border-bottom: 1px solid var(--divider);
+      font-family: var(--f-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      transition: color 0.2s;
+    }
+    .site-bar::before {
+      content: '';
+      flex: none;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--btn-border);
+      box-shadow: 10px 0 0 var(--btn-border), 20px 0 0 var(--accent);
+      margin-right: 1.25rem;
+    }
+    .site-bar:hover { color: var(--accent-lt); }
+    .site-body { padding: 1.5rem 1.75rem 1.75rem; }
+
     /* ── Responsive ───────────────────────────────────── */
     @media (max-width: 900px) {
       .about-hero { grid-template-columns: 1fr; }
       .about-portrait { max-width: 320px; }
       .side-grid { grid-template-columns: 1fr; }
+      .sites-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .services-grid { grid-template-columns: 1fr; }
@@ -381,12 +425,66 @@
     </div>
 
     <div class="svc-card reveal" style="--d:.13s">
-      <span class="svc-number">Automation &amp; Bots</span>
-      <h3 class="svc-title">AI workflows<br>and Telegram bots</h3>
-      <p class="svc-desc">AI-powered Telegram bots for automated news delivery and content generation.
-      Built with AI-assisted development — Python, GitHub, API integrations.</p>
-      <span class="svc-tools">Python · n8n · ChatGPT · Claude · Gemini APIs</span>
+      <span class="svc-number">Websites &amp; Automation</span>
+      <h3 class="svc-title">Websites, AI workflows<br>and Telegram bots</h3>
+      <p class="svc-desc">Landing pages, blogs with their own CMS, and portfolio sites — plus
+      AI-powered Telegram bots for news delivery and content generation.
+      Built with AI-assisted development, from brief to live domain.</p>
+      <span class="svc-tools">Claude Code · Cloudflare · Vercel · GitHub · Python · n8n</span>
     </div>
+
+  </div>
+</div>
+
+<!-- ═══ Websites ═════════════════════════════════════════════ -->
+<div class="section section-sm" id="websites">
+  <span class="section-tag reveal">Websites</span>
+  <p class="sites-lead reveal">Landing pages, blogs and portfolios — designed and built with AI,
+  from a written brief to a live site on its own domain.</p>
+
+  <div class="sites-grid">
+
+    <article class="site-card reveal">
+      <a class="site-bar" href="https://hubcurious.com/" target="_blank" rel="noopener">hubcurious.com</a>
+      <div class="site-body">
+        <span class="side-tag mono">Blog · Custom CMS</span>
+        <h3 class="side-title">Hub Curious</h3>
+        <p class="side-desc">My personal blog with its own CMS — an admin panel where I write,
+        edit and publish articles and upload photos, no code needed. Built in three days
+        with Claude Code; runs on Cloudflare for the price of a domain.</p>
+        <div class="side-links">
+          <a href="https://hubcurious.com/" target="_blank" rel="noopener">Visit site</a>
+          <a href="https://hubcurious.com/ai/how-i-built-this-site" target="_blank" rel="noopener">How I built it</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="site-card reveal" style="--d:.08s">
+      <a class="site-bar" href="https://links-lilprompt.vercel.app/" target="_blank" rel="noopener">links-lilprompt.vercel.app</a>
+      <div class="site-body">
+        <span class="side-tag mono">Landing · For an AI artist</span>
+        <h3 class="side-title">Lil Prompt Official</h3>
+        <p class="side-desc">A link-in-bio landing page for AI artist Lil Prompt: all channels,
+        videos and a built-in music player in one place, styled to match his brand.</p>
+        <div class="side-links">
+          <a href="https://links-lilprompt.vercel.app/" target="_blank" rel="noopener">Visit site</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="site-card reveal" style="--d:.16s">
+      <a class="site-bar" href="index.html">ainataliale.pages.dev</a>
+      <div class="site-body">
+        <span class="side-tag mono">Portfolio</span>
+        <h3 class="side-title">This site</h3>
+        <p class="side-desc">The portfolio you are on right now — dark editorial design,
+        video showreel, filterable work grid. Built with AI-assisted development,
+        no prior programming background.</p>
+        <div class="side-links">
+          <a href="https://github.com/natalialeaiart/aiportfolio" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </article>
 
   </div>
 </div>
@@ -417,29 +515,6 @@
         <a href="https://chatgpt.com/g/g-6a0c1d49fd8881918612b56af8e14943-ai-carousel-creative-director" target="_blank" rel="noopener">Carousel Director GPT</a>
         <a href="https://chatgpt.com/g/g-69ac4bfacfac8191b31e3e6057b27150-cinematic-scene-builder" target="_blank" rel="noopener">Cinematic Scene Builder GPT</a>
         <a href="https://ai-outpainting-guide.vercel.app/" target="_blank" rel="noopener">AI Outpainting Guide</a>
-      </div>
-    </div>
-
-    <div class="side-card reveal">
-      <span class="side-tag mono">Website · Vibe Coding</span>
-      <h3 class="side-title">Hub Curious</h3>
-      <p class="side-desc">My personal blog with its own content management system — built
-      in three days with Claude Code, without writing a single line of code. Runs on Cloudflare
-      for the price of a domain. I wrote up the whole process, from brief to launch.</p>
-      <div class="side-links">
-        <a href="https://hubcurious.com/ai/how-i-built-this-site" target="_blank" rel="noopener">How I built it</a>
-        <a href="https://hubcurious.com/" target="_blank" rel="noopener">hubcurious.com</a>
-      </div>
-    </div>
-
-    <div class="side-card reveal" style="--d:.08s">
-      <span class="side-tag mono">Portfolio · Vibe Coding</span>
-      <h3 class="side-title">This site</h3>
-      <p class="side-desc">Built entirely with AI-assisted development (ChatGPT, Gemini, Claude)
-      — no prior programming background, just curiosity and persistence.
-      The code is clean enough to edit, the design intentional enough to stand for something.</p>
-      <div class="side-links">
-        <a href="https://github.com/natalialeaiart/portfolio-v2" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
 

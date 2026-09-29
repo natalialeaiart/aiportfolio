@@ -144,6 +144,8 @@
       color: var(--text-dim);
     }
     .svc-sep { padding: 0 1rem; color: var(--divider); font-size: 1.4rem; line-height: 1; }
+    .services-more { display: inline-block; margin-top: 1.5rem; font-size: 0.9rem; }
+    .services-more::after { content: ' →'; }
 
     /* ── Trust strip ──────────────────────────────────── */
     .trust-grid {
@@ -330,7 +332,7 @@
 <!-- ═══ Services ════════════════════════════════════════════ -->
 <div class="section section-sm">
   <span class="section-tag reveal">What I do</span>
-  <p class="services-lead reveal">Full-cycle AI content: video, image, music, and code.</p>
+  <p class="services-lead reveal">Full-cycle AI content: video, image, music — and the websites to show it.</p>
   <div class="services-row reveal" style="--d:.1s">
     <span class="svc">AI Video</span>
     <span class="svc-sep">·</span>
@@ -338,8 +340,11 @@
     <span class="svc-sep">·</span>
     <span class="svc">Music &amp; Audio</span>
     <span class="svc-sep">·</span>
+    <span class="svc">Websites</span>
+    <span class="svc-sep">·</span>
     <span class="svc">Automation</span>
   </div>
+  <a href="about.html#websites" class="text-link services-more reveal" style="--d:.15s">See websites I've built</a>
 </div>
 
 <hr class="rule">
