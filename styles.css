@@ -206,18 +206,50 @@ p strong { color: var(--text); }
   filter: brightness(0.72);
 }
 
-.card-play {
+/* Play button — always visible (phones have no hover), fills with accent on hover */
+.card-play,
+.work-play {
   position: absolute;
-  inset: 0;
+  top: 50%; left: 50%;
+  width: 3rem; height: 3rem;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  padding-left: 3px;
+  border-radius: 50%;
+  background: rgba(18, 16, 20, 0.55);
+  border: 1px solid rgba(242, 239, 245, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-size: 0.9rem;
   color: var(--text);
-  opacity: 0;
-  transition: opacity 0.3s;
+  transition: transform 0.3s ease, background 0.25s, border-color 0.25s;
 }
-.card:hover .card-play { opacity: 1; }
+.card:hover .card-play,
+.work-item:hover .work-play {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ── Text links ────────────────────────────────────────────── */
+/* Inline link inside running text: accent colour + underline + arrow */
+.text-link {
+  color: var(--accent-lt);
+  text-decoration: underline;
+  text-decoration-color: rgba(167, 139, 250, 0.5);
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.text-link::after { content: ' ↗'; }
+.text-link:hover { color: var(--text); text-decoration-color: var(--accent); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-lt);
+  outline-offset: 3px;
+}
 
 /* ── Badges ────────────────────────────────────────────────── */
 .badge {
@@ -336,10 +368,14 @@ p strong { color: var(--text); }
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-dim);
-  transition: color 0.2s;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--btn-border);
+  text-underline-offset: 4px;
+  transition: color 0.2s, text-decoration-color 0.2s;
 }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a::after { content: ' ↗'; color: var(--accent-lt); }
+.footer-links a:hover { color: var(--accent-lt); text-decoration-color: var(--accent); }
 .footer-locale {
   font-family: var(--f-mono);
   font-size: 0.6rem;
@@ -355,6 +391,7 @@ p strong { color: var(--text); }
 }
 @media (max-width: 480px) {
   .nav-links a { font-size: 0.8rem; }
+  .work-play { width: 2.1rem; height: 2.1rem; font-size: 0.65rem; padding-left: 2px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 

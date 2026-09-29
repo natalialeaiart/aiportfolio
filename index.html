@@ -86,21 +86,21 @@
       align-items: start;
     }
 
-    /* "View all" cell */
+    /* "View all" strip — spans the full row under the cards */
     .sel-all {
+      grid-column: 1 / -1;
       background: var(--bg-raised);
+      border: 1px solid rgba(139,92,246,0.35);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 1rem;
-      padding: 2rem;
-      min-height: 200px;
+      padding: 1.25rem 2rem;
       text-decoration: none;
       transition: background 0.25s;
     }
     .sel-all:hover { background: rgba(139,92,246,0.07); }
-    .sel-all .mono { transition: color 0.2s; }
+    .sel-all .mono { color: var(--text); transition: color 0.2s; }
     .sel-all:hover .mono { color: var(--accent); }
     .sel-arrow {
       font-size: 1.8rem;
@@ -142,9 +142,7 @@
       font-size: clamp(1.4rem, 2.8vw, 2.2rem);
       font-weight: 500;
       color: var(--text-dim);
-      transition: color 0.2s;
     }
-    .svc:hover { color: var(--text); }
     .svc-sep { padding: 0 1rem; color: var(--divider); font-size: 1.4rem; line-height: 1; }
 
     /* ── Trust strip ──────────────────────────────────── */
@@ -278,20 +276,35 @@
       </div>
     </article>
 
-    <article class="card reveal" style="--d:.05s" data-id="7ktijt6dwoE">
-  <div class="card-media">
-    <img src="https://img.youtube.com/vi/7ktijt6dwoE/maxresdefault.jpg"
-         onerror="this.src='https://img.youtube.com/vi/7ktijt6dwoE/hqdefault.jpg'"
-         alt="All My Former AI Avatars in One Room" loading="lazy">
-    <div class="card-play">▶</div>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">All My Former AI Avatars in One Room</h3>
-    <span class="mono card-meta">Seedance 4K</span>
-  </div>
-</article>
+    <article class="card reveal" style="--d:.05s" data-id="WEhSnLydjfg">
+      <div class="card-media">
+        <img src="https://img.youtube.com/vi/WEhSnLydjfg/maxresdefault.jpg"
+             onerror="this.src='https://img.youtube.com/vi/WEhSnLydjfg/hqdefault.jpg'"
+             alt="Can They Save Him? AI short film, collab with Lil Prompt" loading="lazy">
+        <div class="card-play">▶</div>
+        <span class="badge badge-client">Collab</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Can They Save Him?</h3>
+        <span class="mono card-meta">Cinematic · Collab with Lil Prompt</span>
+        <p class="card-result">An episode of the Benny Verse series</p>
+      </div>
+    </article>
 
-    <article class="card reveal" style="--d:.12s" data-id="3wQ5gtOOWI8">
+    <article class="card reveal" style="--d:.12s" data-id="7ktijt6dwoE">
+      <div class="card-media">
+        <img src="https://img.youtube.com/vi/7ktijt6dwoE/maxresdefault.jpg"
+             onerror="this.src='https://img.youtube.com/vi/7ktijt6dwoE/hqdefault.jpg'"
+             alt="All My Former AI Avatars in One Room" loading="lazy">
+        <div class="card-play">▶</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">All My Former AI Avatars in One Room</h3>
+        <span class="mono card-meta">Seedance 4K</span>
+      </div>
+    </article>
+
+    <article class="card reveal" style="--d:.19s" data-id="3wQ5gtOOWI8">
       <div class="card-media">
         <img src="https://img.youtube.com/vi/3wQ5gtOOWI8/maxresdefault.jpg"
              onerror="this.src='https://img.youtube.com/vi/3wQ5gtOOWI8/hqdefault.jpg'"
@@ -304,7 +317,7 @@
       </div>
     </article>
 
-    <a href="work.html" class="sel-all reveal" style="--d:.19s" aria-label="View all work">
+    <a href="work.html" class="sel-all reveal" aria-label="View all work">
       <span class="mono">View all work</span>
       <span class="sel-arrow">→</span>
     </a>

@@ -112,18 +112,6 @@
       transform: scale(1.04);
       filter: brightness(0.72);
     }
-    .work-play {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: var(--text);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .work-item:hover .work-play { opacity: 1; }
 
     .work-info { padding: 0.875rem 1.1rem 1.25rem; }
     .work-title { font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
@@ -449,6 +437,20 @@
   </div>
 
   <!-- Cinematic -->
+  <div class="work-item" data-categories="cinematic" data-id="WEhSnLydjfg">
+    <div class="work-thumb">
+      <img src="https://img.youtube.com/vi/WEhSnLydjfg/maxresdefault.jpg"
+           onerror="this.src='https://img.youtube.com/vi/WEhSnLydjfg/hqdefault.jpg'"
+           alt="Can They Save Him? AI short film, collab with Lil Prompt" loading="lazy">
+      <div class="work-play">▶</div>
+      <span class="badge badge-client">Collab</span>
+    </div>
+    <div class="work-info">
+      <p class="work-title">Can They Save Him? · Benny Verse</p>
+      <span class="mono work-cat">Cinematic · Collab with Lil Prompt</span>
+    </div>
+  </div>
+
   <div class="work-item" data-categories="cinematic" data-id="3wQ5gtOOWI8">
     <div class="work-thumb">
       <img src="https://img.youtube.com/vi/3wQ5gtOOWI8/maxresdefault.jpg"

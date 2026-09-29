@@ -210,9 +210,33 @@
     .side-tag { display: block; margin-bottom: 1rem; }
     .side-title { font-size: 1rem; font-weight: 500; color: var(--text); margin-bottom: 0.6rem; }
     .side-desc { font-size: 0.875rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 1rem; }
-    .side-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
-    .side-links a { font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); transition: color 0.2s; }
-    .side-links a:hover { color: var(--accent-lt); }
+    .side-stat {
+      font-family: var(--f-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: -0.25rem 0 1rem;
+    }
+    /* Links are outlined chips with an arrow — so they never read as labels */
+    .side-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .side-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(139, 92, 246, 0.45);
+      border-radius: 3px;
+      font-family: var(--f-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .side-links a::after { content: '↗'; color: var(--accent-lt); transition: transform 0.2s, color 0.2s; }
+    .side-links a:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .side-links a:hover::after { color: var(--bg); transform: translate(2px, -2px); }
 
     /* ── Responsive ───────────────────────────────────── */
     @media (max-width: 900px) {
@@ -266,8 +290,7 @@
     <p class="about-bio">
       Before AI content, I spent <strong>12 years in HR</strong> across different industries in Riga —
       managing employee relations, stakeholder communication, and people processes at scale.
-      <a href="https://cv-nataliale.vercel.app/" target="_blank" rel="noopener"
-         style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Full CV →</a>
+      <a href="https://cv-nataliale.vercel.app/" target="_blank" rel="noopener" class="text-link">Full CV</a>
     </p>
     <div style="display:flex;gap:.875rem;flex-wrap:wrap;margin-top:.5rem;">
       <a href="work.html" class="btn btn-primary">View work</a>
@@ -375,17 +398,52 @@
   <div class="side-grid">
 
     <div class="side-card reveal">
-      <span class="side-tag mono">Portfolio</span>
+      <span class="side-tag mono">Product · Video Editing</span>
+      <h3 class="side-title">AI Edit Lab</h3>
+      <p class="side-desc">My first product: a step-by-step method for swapping the background
+      and outfits in real footage with Seedance 2.5. Generate a precise edit prompt in ChatGPT
+      or Claude, upload your video with a reference — and get the edited shot.</p>
+      <div class="side-links">
+        <a href="https://ai-edit-lab.pages.dev/" target="_blank" rel="noopener">Open AI Edit Lab</a>
+      </div>
+    </div>
+
+    <div class="side-card reveal" style="--d:.08s">
+      <span class="side-tag mono">AI Tools</span>
+      <h3 class="side-title">GPTs &amp; Guides</h3>
+      <p class="side-desc">Custom AI tools built for visual creators — open and free to use. Outpainting techniques, carousel design direction, cinematic scene building.</p>
+      <p class="side-stat">Carousel Director GPT · 1K+ conversations</p>
+      <div class="side-links">
+        <a href="https://chatgpt.com/g/g-6a0c1d49fd8881918612b56af8e14943-ai-carousel-creative-director" target="_blank" rel="noopener">Carousel Director GPT</a>
+        <a href="https://chatgpt.com/g/g-69ac4bfacfac8191b31e3e6057b27150-cinematic-scene-builder" target="_blank" rel="noopener">Cinematic Scene Builder GPT</a>
+        <a href="https://ai-outpainting-guide.vercel.app/" target="_blank" rel="noopener">AI Outpainting Guide</a>
+      </div>
+    </div>
+
+    <div class="side-card reveal">
+      <span class="side-tag mono">Website · Vibe Coding</span>
+      <h3 class="side-title">Hub Curious</h3>
+      <p class="side-desc">My personal blog with its own content management system — built
+      in three days with Claude Code, without writing a single line of code. Runs on Cloudflare
+      for the price of a domain. I wrote up the whole process, from brief to launch.</p>
+      <div class="side-links">
+        <a href="https://hubcurious.com/ai/how-i-built-this-site" target="_blank" rel="noopener">How I built it</a>
+        <a href="https://hubcurious.com/" target="_blank" rel="noopener">hubcurious.com</a>
+      </div>
+    </div>
+
+    <div class="side-card reveal" style="--d:.08s">
+      <span class="side-tag mono">Portfolio · Vibe Coding</span>
       <h3 class="side-title">This site</h3>
       <p class="side-desc">Built entirely with AI-assisted development (ChatGPT, Gemini, Claude)
       — no prior programming background, just curiosity and persistence.
       The code is clean enough to edit, the design intentional enough to stand for something.</p>
       <div class="side-links">
-        <a href="https://github.com/natalialeaiart/portfolio-v2" target="_blank" rel="noopener">GitHub →</a>
+        <a href="https://github.com/natalialeaiart/portfolio-v2" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
 
-    <div class="side-card reveal" style="--d:.08s">
+    <div class="side-card reveal">
       <span class="side-tag mono">Bots · Automation</span>
       <h3 class="side-title">AI News Telegram Bots</h3>
       <p class="side-desc">Two bots that automatically collect and deliver daily AI news.
@@ -396,7 +454,7 @@
       </div>
     </div>
 
-    <div class="side-card reveal" style="--d:.16s">
+    <div class="side-card reveal" style="--d:.08s">
       <span class="side-tag mono">Music</span>
       <h3 class="side-title">NataliaLe Music</h3>
       <p class="side-desc">Original AI-generated songs written to my own and classic poetry.
@@ -406,17 +464,6 @@
         <a href="https://music.apple.com/us/artist/nataliale-music/1783613250" target="_blank" rel="noopener">Apple Music</a>
         <a href="https://music.youtube.com/channel/UCZmtOYNYEEgHf-r50_uf6DQ" target="_blank" rel="noopener">YouTube Music</a>
         <a href="https://www.deezer.com/en/artist/293099981" target="_blank" rel="noopener">Deezer</a>
-      </div>
-    </div>
-
-    <div class="side-card reveal" style="--d:.24s">
-      <span class="side-tag mono">AI Tools</span>
-      <h3 class="side-title">GPTs &amp; Guides</h3>
-      <p class="side-desc">Custom AI tools built for visual creators — open and free to use. Outpainting techniques, carousel design direction, cinematic scene building.</p>
-      <div class="side-links">
-        <a href="https://ai-outpainting-guide.vercel.app/" target="_blank" rel="noopener">AI Outpainting Guide →</a>
-        <a href="https://chatgpt.com/g/g-6a0c1d49fd8881918612b56af8e14943-ai-carousel-creative-director" target="_blank" rel="noopener">Carousel Director GPT →</a>
-        <a href="https://chatgpt.com/g/g-69ac4bfacfac8191b31e3e6057b27150-cinematic-scene-builder" target="_blank" rel="noopener">Cinematic Scene Builder GPT →</a>
       </div>
     </div>
 
