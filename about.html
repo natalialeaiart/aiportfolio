@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Natalia Le · AI Content Creator</title>
-  <meta name="description" content="About Natalia Le — Generative AI Specialist &amp; Visual Storyteller based in Riga. From HR to full-time AI creator in one year.">
+  <meta name="description" content="About Natalia Le — Generative AI Specialist &amp; Visual Storyteller based in Riga. AI video, custom music and AI-assisted websites.">
 
   <meta property="og:title"       content="About — Natalia Le · AI Content Creator">
-  <meta property="og:description" content="Generative AI Specialist and Visual Storyteller. From self-taught experiments to international full-time role in 14 months.">
+  <meta property="og:description" content="Generative AI Specialist and Visual Storyteller. AI video from script to final cut, custom music and AI-assisted websites.">
   <meta property="og:image"       content="https://img.youtube.com/vi/qfWMkP8nfNg/maxresdefault.jpg">
   <meta property="og:url"         content="https://ainataliale.pages.dev/about.html">
   <meta property="og:type"        content="website">
@@ -74,77 +74,23 @@
     }
     .about-bio strong { color: var(--text); }
 
-    /* ── Journey timeline ─────────────────────────────── */
-    .timeline-wrap {
-      position: relative;
-      padding-left: 9rem;
+    /* Highlighted experience line under the bio */
+    .about-exp {
+      border-left: 2px solid var(--accent);
+      padding: 0.25rem 0 0.25rem 1rem;
+      max-width: 52ch;
+      margin: -1rem 0 2.5rem;
     }
-    .timeline-wrap::before {
-      content: '';
-      position: absolute;
-      left: 7.25rem;
-      top: 0.5rem;
-      bottom: 2rem;
-      width: 1px;
-      background: var(--divider);
-    }
-
-    .tl-item {
-      position: relative;
-      margin-bottom: 3.25rem;
-    }
-
-    /* dot on the timeline */
-    .tl-item::before {
-      content: '';
-      position: absolute;
-      left: -1.85rem;
-      top: 0.38rem;
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1.5px solid var(--accent);
-    }
-
-    /* last item: filled dot = "now" */
-    .tl-item.is-now::before {
-      background: var(--accent);
-    }
-
-    .tl-date {
-      position: absolute;
-      left: -9rem;
-      top: 0.1rem;
-      width: 7rem;
-      text-align: right;
-      font-family: var(--f-mono);
-      font-size: 0.63rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      line-height: 1.4;
-    }
-
-    .tl-title {
-      font-size: 1.05rem;
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-    }
-    .tl-desc {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      line-height: 1.6;
-    }
-    .tl-desc strong { color: var(--text); }
-    .tl-prize {
-      display: inline-block;
-      margin-top: 0.5rem;
+    .about-exp-tag {
+      display: block;
       font-family: var(--f-mono);
       font-size: 0.62rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--accent-lt);
+      margin-bottom: 0.35rem;
     }
+    .about-exp p { font-size: 0.95rem; color: var(--text); line-height: 1.5; }
 
     /* ── What I Do grid ───────────────────────────────── */
     .services-grid {
@@ -252,7 +198,7 @@
     }
     .sites-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--divider);
     }
@@ -298,10 +244,6 @@
     }
     @media (max-width: 640px) {
       .about-portrait { max-width: 220px; }
-      .timeline-wrap { padding-left: 7rem; }
-      .timeline-wrap::before { left: 5.5rem; }
-      .tl-date { left: -7rem; width: 5.5rem; font-size: 0.58rem; }
-      .tl-item::before { left: -1.6rem; }
       .exp-header { flex-direction: column; gap: 0.4rem; }
     }
   </style>
@@ -333,66 +275,66 @@
     <h1 style="margin-bottom:0.75rem;">Natalia Le</h1>
     <span class="about-intro-role">Generative AI Specialist · Visual Storyteller</span>
     <p class="about-bio">
-      I started learning AI tools in <strong>September 2024</strong> and went from first experiments
-      to freelance clients, a competition win, and a full-time international role in just over a year.
+      I started learning AI tools in <strong>September 2024</strong> and within a year went from first
+      experiments to freelance clients and 3rd place at the KlingAI Ad Master competition.
       My work sits at the intersection of AI and cinematic storytelling — I manage the full production
       cycle, from script and storyboard to generation, sound, and final cut.
     </p>
     <p class="about-bio">
-      Before AI content, I spent <strong>12 years in HR</strong> across different industries in Riga —
-      managing employee relations, stakeholder communication, and people processes at scale.
-      <a href="https://cv-nataliale.vercel.app/" target="_blank" rel="noopener" class="text-link">Full CV</a>
+      I also build <strong>websites with AI-assisted development</strong> — landing pages, blogs and
+      portfolios — and make <strong>custom music</strong>: songs to your poetry or background tracks
+      for cafés and bars.
     </p>
+    <div class="about-exp">
+      <span class="about-exp-tag">4-month project</span>
+      <p>AI Visual Content Creator &amp; Prompt Engineer for an AI social app</p>
+    </div>
     <div style="display:flex;gap:.875rem;flex-wrap:wrap;margin-top:.5rem;">
       <a href="work.html" class="btn btn-primary">View work</a>
-      <a href="https://www.linkedin.com/in/natalja-levaskovica" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:nataliale.vivid@gmail.com" class="btn btn-ghost">Email me</a>
     </div>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- ═══ Journey ═════════════════════════════════════════════ -->
-<div class="section">
-  <span class="section-tag reveal">Journey</span>
+<!-- ═══ What I Do ═══════════════════════════════════════════ -->
+<div class="section section-sm">
+  <span class="section-tag reveal">What I do</span>
 
-  <div class="timeline-wrap">
+  <div class="services-grid">
 
-    <div class="tl-item reveal" style="--d:.05s">
-      <span class="tl-date">Sep<br>2024</span>
-      <h3 class="tl-title">First experiments</h3>
-      <p class="tl-desc">Started learning AI tools — first Midjourney course, then video generation.
-      Things took off fast.</p>
+    <div class="svc-card reveal">
+      <span class="svc-number">AI Video Production</span>
+      <h3 class="svc-title">Script to final cut,<br>fully AI-generated</h3>
+      <p class="svc-desc">Concept development, storyboard, character design,
+      animation, and editing — for social media, e-commerce, and brand promotion.</p>
+      <span class="svc-tools">Kling · Veo · Seedance · Filmora · CapCut</span>
     </div>
 
-    <div class="tl-item reveal" style="--d:.1s">
-      <span class="tl-date">Late<br>2024</span>
-      <h3 class="tl-title">First clients</h3>
-      <p class="tl-desc">Submitted a video to the KlingAI Ad Master competition.
-      <strong>First freelance orders for AI video ads</strong> arrived — clients found the work before I
-      had finished building a portfolio.</p>
+    <div class="svc-card reveal" style="--d:.08s">
+      <span class="svc-number">Image &amp; Characters</span>
+      <h3 class="svc-title">Prompt engineering<br>and character consistency</h3>
+      <p class="svc-desc">Image generation, character consistency
+      across scenes, compositing and retouching.</p>
+      <span class="svc-tools">NanoBanana · Seedream · GPT-Image · MidJourney · PicsArt · Lightroom</span>
     </div>
 
-    <div class="tl-item reveal" style="--d:.15s">
-      <span class="tl-date">Mar<br>2025</span>
-      <h3 class="tl-title">KlingAI Ad Master — 3rd Place</h3>
-      <p class="tl-desc">Popularity Award · KlingAI Ad Master Dual Challenges.</p>
-      <span class="tl-prize">Prize: 6-month Pro Plan · 3,500 credits</span>
+    <div class="svc-card reveal" style="--d:.05s">
+      <span class="svc-number">AI Music &amp; Audio</span>
+      <h3 class="svc-title">Custom songs, background<br>tracks and voice</h3>
+      <p class="svc-desc">Songs written to your poetry, background music for cafés, bars and shops,
+      music for ads and AI voice acting. I also created the AI singer Nathaniel Vampire.</p>
+      <span class="svc-tools">Suno · MMAudio · Eleven Labs</span>
     </div>
 
-    <div class="tl-item reveal" style="--d:.2s">
-      <span class="tl-date">Oct 2025<br>– Feb 2026</span>
-      <h3 class="tl-title">Full-time at an AI startup</h3>
-      <p class="tl-desc"><strong>AI Visual Content Creator &amp; Prompt Engineer</strong> at an early-stage
-      AI social app. Cyprus · Remote. Developed structured prompt frameworks for character-consistent,
-      script-based visual content. Integrated real users into AI-generated environments.</p>
-    </div>
-
-    <div class="tl-item is-now reveal" style="--d:.25s">
-      <span class="tl-date">Now</span>
-      <h3 class="tl-title">Freelancing</h3>
-      <p class="tl-desc">Open to collaborations, creative projects, and new roles — including
-      international remote.</p>
+    <div class="svc-card reveal" style="--d:.13s">
+      <span class="svc-number">Websites &amp; Automation</span>
+      <h3 class="svc-title">Websites, AI workflows<br>and Telegram bots</h3>
+      <p class="svc-desc">Landing pages, blogs with their own CMS, and portfolio sites — plus
+      AI-powered Telegram bots for news delivery and content generation.
+      Built with AI-assisted development, from brief to live domain.</p>
+      <span class="svc-tools">Claude Code · Cloudflare · Vercel · GitHub · Python · n8n</span>
     </div>
 
   </div>
@@ -450,6 +392,19 @@
       </div>
     </article>
 
+    <article class="site-card reveal" style="--d:.08s">
+      <a class="site-bar" href="https://nathanielvampire.pages.dev/" target="_blank" rel="noopener">nathanielvampire.pages.dev</a>
+      <div class="site-body">
+        <span class="side-tag mono">Landing · AI Artist Release</span>
+        <h3 class="side-title">Nathaniel Vampire — My Mortal Thing</h3>
+        <p class="side-desc">A release page for the debut single of AI singer Nathaniel Vampire:
+        cover, story and links to Spotify, YouTube Music and Apple Music.</p>
+        <div class="side-links">
+          <a href="https://nathanielvampire.pages.dev/" target="_blank" rel="noopener">Visit site</a>
+        </div>
+      </div>
+    </article>
+
   </div>
 </div>
 
@@ -494,61 +449,16 @@
     </div>
 
     <div class="side-card reveal" style="--d:.08s">
-      <span class="side-tag mono">Music</span>
-      <h3 class="side-title">NataliaLe Music</h3>
-      <p class="side-desc">Original AI-generated songs written to my own and classic poetry.
-      Available on all major streaming platforms.</p>
+      <span class="side-tag mono">Music · AI Persona</span>
+      <h3 class="side-title">Nathaniel Vampire</h3>
+      <p class="side-desc">An AI singer I created — voice, look and story. His debut single
+      “My Mortal Thing” is out on all major streaming platforms.</p>
       <div class="side-links">
-        <a href="https://open.spotify.com/artist/4wDR1uVgBKSpSTrGkr31xF" target="_blank" rel="noopener">Spotify</a>
-        <a href="https://music.apple.com/us/artist/nataliale-music/1783613250" target="_blank" rel="noopener">Apple Music</a>
-        <a href="https://music.youtube.com/channel/UCZmtOYNYEEgHf-r50_uf6DQ" target="_blank" rel="noopener">YouTube Music</a>
-        <a href="https://www.deezer.com/en/artist/293099981" target="_blank" rel="noopener">Deezer</a>
+        <a href="https://open.spotify.com/album/6uLqnvI6s8yTIwKGgxNWf9" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/us/song/my-mortal-thing/6828099036" target="_blank" rel="noopener">Apple Music</a>
+        <a href="https://youtu.be/SqiCt7j61vA" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/nathaniel.vampire" target="_blank" rel="noopener">Instagram</a>
       </div>
-    </div>
-
-  </div>
-</div>
-
-<hr class="rule">
-
-<!-- ═══ What I Do ═══════════════════════════════════════════ -->
-<div class="section section-sm">
-  <span class="section-tag reveal">Work with me</span>
-
-  <div class="services-grid">
-
-    <div class="svc-card reveal">
-      <span class="svc-number">AI Video Production</span>
-      <h3 class="svc-title">Script to final cut,<br>fully AI-generated</h3>
-      <p class="svc-desc">Concept development, storyboard, character design,
-      animation, and editing — for social media, e-commerce, and brand promotion.</p>
-      <span class="svc-tools">Kling · Veo · Seedance · Filmora · CapCut</span>
-    </div>
-
-    <div class="svc-card reveal" style="--d:.08s">
-      <span class="svc-number">Image &amp; Characters</span>
-      <h3 class="svc-title">Prompt engineering<br>and character consistency</h3>
-      <p class="svc-desc">Image generation, character consistency
-      across scenes, compositing and retouching.</p>
-      <span class="svc-tools">NanoBanana · Seedream · GPT-Image · MidJourney · PicsArt · Lightroom</span>
-    </div>
-
-    <div class="svc-card reveal" style="--d:.05s">
-      <span class="svc-number">AI Music &amp; Audio</span>
-      <h3 class="svc-title">Custom music, voice,<br>and ambient sound</h3>
-      <p class="svc-desc">Music and audio for ads, AI voice acting, ambient soundscapes.
-      Original songs written to commissioned and own poetry, available on streaming platforms
-      as NataliaLe Music.</p>
-      <span class="svc-tools">Suno · MMAudio · Eleven Labs</span>
-    </div>
-
-    <div class="svc-card reveal" style="--d:.13s">
-      <span class="svc-number">Websites &amp; Automation</span>
-      <h3 class="svc-title">Websites, AI workflows<br>and Telegram bots</h3>
-      <p class="svc-desc">Landing pages, blogs with their own CMS, and portfolio sites — plus
-      AI-powered Telegram bots for news delivery and content generation.
-      Built with AI-assisted development, from brief to live domain.</p>
-      <span class="svc-tools">Claude Code · Cloudflare · Vercel · GitHub · Python · n8n</span>
     </div>
 
   </div>
@@ -560,11 +470,11 @@
 <footer class="footer" id="contact">
   <div class="footer-top">
     <div>
-      <span class="footer-tag">Open to collaborations &amp; new roles</span>
+      <span class="footer-tag">Open to collaborations &amp; projects</span>
       <p class="footer-name">Natalia Le</p>
     </div>
     <div class="footer-btns">
-      <a href="https://www.linkedin.com/in/natalja-levaskovica" class="btn btn-accent" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:nataliale.vivid@gmail.com" class="btn btn-accent">Email</a>
       <a href="https://t.me/NataliLe" class="btn btn-accent" target="_blank" rel="noopener">Telegram</a>
       <a href="https://wa.me/37126106616" class="btn btn-accent" target="_blank" rel="noopener">WhatsApp</a>
     </div>
