@@ -206,6 +206,8 @@
       background: var(--divider);
     }
     .site-card { background: var(--bg-raised); display: flex; flex-direction: column; }
+    /* Odd card count: the last one fills the row instead of leaving an empty divider-coloured cell */
+    .site-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
     /* Minimal "address bar": three dots + domain, in place of a screenshot */
     .site-bar {
       display: flex;
@@ -404,6 +406,20 @@
         cover, story and links to Spotify, YouTube Music and Apple Music.</p>
         <div class="side-links">
           <a href="https://nathanielvampire.pages.dev/" target="_blank" rel="noopener">Visit site</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="site-card reveal" style="--d:.16s">
+      <a class="site-bar" href="https://links-nataliale.pages.dev/" target="_blank" rel="noopener">links-nataliale.pages.dev</a>
+      <div class="site-body">
+        <span class="side-tag mono">Link in bio · Personal</span>
+        <h3 class="side-title">Natalia Le — Links</h3>
+        <p class="side-desc">My own link-in-bio page in an editorial style: AI visuals, video,
+        Nathaniel Vampire’s single, sites and bots, all socials and GPT tools in one place.</p>
+        <div class="side-links">
+          <a href="https://links-nataliale.pages.dev/" target="_blank" rel="noopener">Visit site</a>
+          <a href="https://github.com/natalialeaiart/links" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </article>
