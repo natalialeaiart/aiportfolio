@@ -116,6 +116,13 @@
     .work-info { padding: 0.875rem 1.1rem 1.25rem; }
     .work-title { font-size: 0.95rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
     .work-cat   { display: block; }
+    .work-cat a {
+      color: var(--accent-lt);
+      text-transform: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .work-cat a:hover { color: var(--text); text-decoration: underline; }
 
     /* ── Responsive ───────────────────────────────────── */
     @media (max-width: 768px) {
@@ -150,7 +157,8 @@
     <li><button class="filter-btn active" data-filter="all">All</button></li>
     <li><button class="filter-btn" data-filter="client">Client</button></li>
     <li><button class="filter-btn" data-filter="fashion">Fashion</button></li>
-    <li><button class="filter-btn" data-filter="portrait">Portrait</button></li>
+    <li><button class="filter-btn" data-filter="twins">Digital Twins</button></li>
+    <li><button class="filter-btn" data-filter="persona">AI Persona</button></li>
     <li><button class="filter-btn" data-filter="hybrid">Hybrid</button></li>
     <li><button class="filter-btn" data-filter="cinematic">Cinematic</button></li>
     <li><button class="filter-btn" data-filter="spaces">Spaces</button></li>
@@ -162,12 +170,12 @@
 <!--
   data-categories: space-separated list.
   Edit these freely — they control which filter tab shows each card.
-  Options: client · fashion · portrait · hybrid · cinematic · spaces · music
+  Options: client · fashion · twins · persona · hybrid · cinematic · spaces · music
 -->
 <div class="work-grid" id="work-grid">
 
   <!-- Featured: shown first under All -->
-  <div class="work-item" data-categories="cinematic" data-id="nCokw5iRlv0">
+  <div class="work-item" data-categories="cinematic twins persona" data-id="nCokw5iRlv0">
     <div class="work-thumb">
       <img src="https://img.youtube.com/vi/nCokw5iRlv0/maxresdefault.jpg"
            onerror="this.src='https://img.youtube.com/vi/nCokw5iRlv0/hqdefault.jpg'"
@@ -176,11 +184,11 @@
     </div>
     <div class="work-info">
       <p class="work-title">When a Vampire Sings at the Opera</p>
-      <span class="mono work-cat">Cinematic · AI Persona + Real People</span>
+      <span class="mono work-cat">Cinematic · AI Persona <a href="https://www.instagram.com/nathaniel.vampire" target="_blank" rel="noopener">@nathaniel.vampire</a> + Real People</span>
     </div>
   </div>
 
-  <div class="work-item" data-categories="cinematic" data-id="WEhSnLydjfg">
+  <div class="work-item" data-categories="cinematic twins" data-id="WEhSnLydjfg">
     <div class="work-thumb">
       <img src="https://img.youtube.com/vi/WEhSnLydjfg/maxresdefault.jpg"
            onerror="this.src='https://img.youtube.com/vi/WEhSnLydjfg/hqdefault.jpg'"
@@ -225,12 +233,52 @@
     <div class="work-thumb">
       <img src="https://img.youtube.com/vi/er7Hc-3_k9Q/maxresdefault.jpg"
            onerror="this.src='https://img.youtube.com/vi/er7Hc-3_k9Q/hqdefault.jpg'"
-           alt="Fashion Reel" loading="lazy">
+           alt="An Unusual Dress Ad — cinematic AI fashion story" loading="lazy">
       <div class="work-play">▶</div>
     </div>
     <div class="work-info">
-      <p class="work-title">Fashion Reel</p>
+      <p class="work-title">An Unusual Dress Ad</p>
       <span class="mono work-cat">Fashion · KlingAI · MidJourney</span>
+    </div>
+  </div>
+
+  <!-- New: AI persona + digital twins, right after the dress ad under All -->
+  <div class="work-item" data-categories="persona" data-id="xfDQ6qgHkEg">
+    <div class="work-thumb">
+      <img src="https://img.youtube.com/vi/xfDQ6qgHkEg/maxresdefault.jpg"
+           onerror="this.src='https://img.youtube.com/vi/xfDQ6qgHkEg/hqdefault.jpg'"
+           alt="He Only Bites the Ones He Loves — AI persona Nathaniel Vampire" loading="lazy">
+      <div class="work-play">▶</div>
+    </div>
+    <div class="work-info">
+      <p class="work-title">He Only Bites the Ones He Loves</p>
+      <span class="mono work-cat">AI Persona · <a href="https://www.instagram.com/nathaniel.vampire" target="_blank" rel="noopener">@nathaniel.vampire</a></span>
+    </div>
+  </div>
+
+  <div class="work-item" data-categories="twins" data-id="8LLelBYsFbA">
+    <div class="work-thumb">
+      <img src="https://img.youtube.com/vi/8LLelBYsFbA/maxresdefault.jpg"
+           onerror="this.src='https://img.youtube.com/vi/8LLelBYsFbA/hqdefault.jpg'"
+           alt="Too Much for a Carnival Party? — Natalia Le's AI digital twin" loading="lazy">
+      <div class="work-play">▶</div>
+    </div>
+    <div class="work-info">
+      <p class="work-title">Too Much for a Carnival Party?</p>
+      <span class="mono work-cat">Digital Twin · Natalia Le</span>
+    </div>
+  </div>
+
+  <div class="work-item" data-categories="twins" data-id="XN0gYdl3rZg">
+    <div class="work-thumb">
+      <img src="https://img.youtube.com/vi/XN0gYdl3rZg/maxresdefault.jpg"
+           onerror="this.src='https://img.youtube.com/vi/XN0gYdl3rZg/hqdefault.jpg'"
+           alt="Find Your Thread — Natalia Le's AI digital twin" loading="lazy">
+      <div class="work-play">▶</div>
+    </div>
+    <div class="work-info">
+      <p class="work-title">Find Your Thread</p>
+      <span class="mono work-cat">Digital Twin · Natalia Le</span>
     </div>
   </div>
 
@@ -367,8 +415,8 @@
     </div>
   </div>
 
-  <!-- AI Portrait Sessions -->
-  <div class="work-item" data-categories="portrait" data-id="sitdwXD_BZ8">
+  <!-- Digital Twins (AI versions of real people) -->
+  <div class="work-item" data-categories="twins" data-id="sitdwXD_BZ8">
     <div class="work-thumb">
       <img src="https://img.youtube.com/vi/sitdwXD_BZ8/maxresdefault.jpg"
            onerror="this.src='https://img.youtube.com/vi/sitdwXD_BZ8/hqdefault.jpg'"
@@ -377,11 +425,11 @@
     </div>
     <div class="work-info">
       <p class="work-title">Let's Look Into the Panther's Eyes · Alina</p>
-      <span class="mono work-cat">AI Portrait</span>
+      <span class="mono work-cat">Digital Twin</span>
     </div>
   </div>
 
-  <div class="work-item" data-categories="portrait" data-id="PuwwVvycZMY">
+  <div class="work-item" data-categories="twins" data-id="PuwwVvycZMY">
     <div class="work-thumb">
       <img src="https://img.youtube.com/vi/PuwwVvycZMY/maxresdefault.jpg"
            onerror="this.src='https://img.youtube.com/vi/PuwwVvycZMY/hqdefault.jpg'"
@@ -390,11 +438,11 @@
     </div>
     <div class="work-info">
       <p class="work-title">AI Photoshoot with a Pink Flamingo · Alina</p>
-      <span class="mono work-cat">AI Portrait</span>
+      <span class="mono work-cat">Digital Twin</span>
     </div>
   </div>
 
-  <div class="work-item" data-categories="portrait" data-id="DOJT6cJQc18">
+  <div class="work-item" data-categories="twins" data-id="DOJT6cJQc18">
     <div class="work-thumb">
       <img src="https://img.youtube.com/vi/DOJT6cJQc18/maxresdefault.jpg"
            onerror="this.src='https://img.youtube.com/vi/DOJT6cJQc18/hqdefault.jpg'"
@@ -403,7 +451,7 @@
     </div>
     <div class="work-info">
       <p class="work-title">Step Into Magic · Harry Potter Mood · Anna</p>
-      <span class="mono work-cat">AI Portrait</span>
+      <span class="mono work-cat">Digital Twin</span>
     </div>
   </div>
 
@@ -628,9 +676,12 @@
     document.body.style.overflow = '';
   }
 
-  // Clicks on grid items
+  // Clicks on grid items (links inside a card, e.g. Instagram, open on their own)
   workItems.forEach(item =>
-    item.addEventListener('click', () => openModal(item.dataset.id))
+    item.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+      openModal(item.dataset.id);
+    })
   );
 
   closeBtn.addEventListener('click', closeModal);
